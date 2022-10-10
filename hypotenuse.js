@@ -8,12 +8,24 @@ function calculateSumOfSquare(a, b) {
 }
 
 function calculateHypotenuse() {
-  const sumOfSquares = calculateSumOfSquare(
-    Number(sides[0].value),
-    Number(sides[1].value)
-  );
-  const lengthOfHypotenuse = Math.sqrt(sumOfSquares);
-  outputEl.innerText = "The length of hypotenuse is " + lengthOfHypotenuse;
+  if (sides[0].value.length === 0 || sides[1].value.length === 0) {
+        outputEl.innerText = "Please do not leave any field empty";
+        return;
+    }
+
+  if (Number(sides[0].value) <= 0 || Number(sides[1].value) <= 0) {
+        outputEl.innerText = "Base and Height must be >= 1 ";
+        return;
+    }
+  else{
+    const sumOfSquares = calculateSumOfSquare(
+      Number(sides[0].value),
+      Number(sides[1].value)
+    );
+    const lengthOfHypotenuse = Math.sqrt(sumOfSquares);
+    outputEl.innerText = "The length of hypotenuse is " + lengthOfHypotenuse;
+  }
+  
 }
 
 calculateBtn.addEventListener("click", calculateHypotenuse);
