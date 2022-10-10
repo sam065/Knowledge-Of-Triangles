@@ -9,12 +9,12 @@ function calculateSumOfSquare(a, b) {
 
 function calculateHypotenuse() {
   if (sides[0].value.length === 0 || sides[1].value.length === 0) {
-        outputEl.innerText = "Please do not leave any field empty";
+        outputEl.innerText = "Please do not leave any field empty.";
         return;
     }
 
   if (Number(sides[0].value) <= 0 || Number(sides[1].value) <= 0) {
-        outputEl.innerText = "Base and Height must be >= 1 ";
+        outputEl.innerText = "Base and Height must be greater than 1.";
         return;
     }
   else{

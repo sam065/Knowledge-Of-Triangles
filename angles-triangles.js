@@ -9,7 +9,7 @@ function sumOfAngles(angle1, angle2, angle3) {
 
 function isTriangle() {
   if (inputs[0].value.length === 0 || inputs[1].value.length === 0 || inputs[2].value.length === 0) {
-    outputIsTriangle.innerText = "One or more angles are empty. Please enter positive values for angles.";
+    outputIsTriangle.innerText = "Please enter positive values for angles.";
     return;
 }
 if (Number(inputs[0].value) === 0 || Number(inputs[1].value) === 0 || Number(inputs[2].value) === 0) {
@@ -30,10 +30,8 @@ else{
   );
 
   if (sum === 180) {
-    console.log("Yay, the angles form a triangle!");
     outputEl.innerText = "Yay, the angles form a triangle!";
   } else {
-    console.log("Oh no! The angle doesn't form a triangle");
     outputEl.innerText = "Oh no! The angle doesn't form a triangle";
   }
 
