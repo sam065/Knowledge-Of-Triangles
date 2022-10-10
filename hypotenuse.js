@@ -1,31 +1,40 @@
-const sides = document.querySelectorAll(".side-input");
-const calculateBtn = document.querySelector("#calculate-hypotenuse-btn");
-const outputEl = document.querySelector(".output");
+const sideInputs = document.querySelectorAll(".side-input");
 
-function calculateSumOfSquare(a, b) {
-  const sumOfSquares = a * a + b * b;
-  return sumOfSquares;
+var calculateButton = document.querySelector("#calculate-hypotenuse-btn");
+
+const outputHypotenuse = document.querySelector(".output");
+
+function calcuateSumOfSquares(x, y) {
+    const sumOfSquares = (x * x) + (y * y);
+    //console.log(sumOfSquares);
+    return sumOfSquares;
+
 }
+
 
 function calculateHypotenuse() {
-  if (sides[0].value.length === 0 || sides[1].value.length === 0) {
-        outputEl.innerText = "Please do not leave any field empty.";
+
+
+    if (sideInputs[0].value.length === 0 || sideInputs[1].value.length === 0) {
+        outputHypotenuse.innerText = "Please do not leave any field empty";
         return;
     }
 
-  if (Number(sides[0].value) <= 0 || Number(sides[1].value) <= 0) {
-        outputEl.innerText = "Base and Height must be greater than 1.";
+    if (Number(sideInputs[0].value) <= 0 || Number(sideInputs[1].value) <= 0) {
+        outputHypotenuse.innerText = "Base and Height must be >= 1 ";
         return;
     }
-  else{
-    const sumOfSquares = calculateSumOfSquare(
-      Number(sides[0].value),
-      Number(sides[1].value)
+
+    const sumOfSquares = calcuateSumOfSquares(
+        Number(sideInputs[0].value),
+        Number(sideInputs[1].value)
     );
     const lengthOfHypotenuse = Math.sqrt(sumOfSquares);
-    outputEl.innerText = "The length of hypotenuse is " + lengthOfHypotenuse;
-  }
-  
+    outputHypotenuse.innerText = "The length of Hypotenuse is : " + lengthOfHypotenuse.toFixed(2);
+
 }
 
-calculateBtn.addEventListener("click", calculateHypotenuse);
+calculateButton.addEventListener("click", calculateHypotenuse);
+
+
+

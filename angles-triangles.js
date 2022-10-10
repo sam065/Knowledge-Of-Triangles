@@ -9,17 +9,17 @@ function sumOfAngles(angle1, angle2, angle3) {
 
 function isTriangle() {
   if (inputs[0].value.length === 0 || inputs[1].value.length === 0 || inputs[2].value.length === 0) {
-    outputIsTriangle.innerText = "Please enter positive values for angles.";
+    outputEl.innerText = "Please enter positive values for angles.";
     return;
 }
 if (Number(inputs[0].value) === 0 || Number(inputs[1].value) === 0 || Number(inputs[2].value) === 0) {
-    outputIsTriangle.innerText = "All three angles must be non-zero and positive."
+    outputEl.innerText = "All three angles must be non-zero and positive."
     return;
 }
 
 
 if (Number(inputs[0].value) < 0 || Number(inputs[1].value < 0) || Number(inputs[2].value < 0)) {
-    outputIsTriangle.innerText = "All three angles must be positive. Please enter valid inputs and retry."
+    outputEl.innerText = "All three angles must be positive. Please enter valid inputs and retry."
     return;
 }
 else{
